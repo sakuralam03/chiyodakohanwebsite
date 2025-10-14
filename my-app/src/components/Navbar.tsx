@@ -7,9 +7,9 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner">
         {/* Logo + Company Name */}
-        <a href="#about" className="logo">
+        <a href="#hero" className="logo">
           <Image
-            src="/logo.png"
+            src="/chiyodakohan.png"
             alt="Chiyoda Kohan Logo"
             width={40}
             height={40}
