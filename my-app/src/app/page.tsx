@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState,useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import Footer from "@/components/Footer";
@@ -9,6 +9,9 @@ import stylesAbout from './About.module.css';
 import Link from "next/link";
 import Image from "next/image";
 import stylesProducts from "./products/Products.module.css";
+import stylesBranches from './Branches.module.css'
+import contactStyles from "./Contact.module.css";
+
 
 
 const fadeIn = {
@@ -44,6 +47,8 @@ export default function HomePage() {
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
   };
+   const subtitleRef = useRef<HTMLParagraphElement>(null);
+
 
   return (
     <>
@@ -55,28 +60,29 @@ export default function HomePage() {
       <div className="wave"></div>
 
       <main className="space-y-32 px-6 py-12">
-        {/* Hero Section */}
-        <motion.section
-          id="hero"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          variants={fadeIn}
-          className={styles.heroSection}
-        >
-          <div className={styles.heroOverlay}>
-            <h1 className={styles.heroTitle}>Chiyoda Kohan Singapore Pte Ltd</h1>
-            <p className={styles.heroSubtitle}>
-              Making our world a better place in the new millennium
-            </p>
-          </div>
-          <img
-            src="/chiyodakohan.png"
-            alt="pic of products"
-            className={styles.heroBg}
-          />
-        </motion.section>
+      <motion.section
+        id="hero"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        variants={fadeIn}
+        className={styles.heroSection}
+      >
+    <div className={styles.heroOverlay}>
+  <h1 className={styles.heroTitle}>Chiyoda Kohan Singapore Pte Ltd</h1>
+  <div className={styles.subtitleWrapper}>
+    <p ref={subtitleRef} className={styles.heroSubtitle}>
+      Making our world a better place in the new millennium
+    </p>
+  </div>
+</div>
+        <img
+          src="/chiyodakohan.png"
+          alt="pic of products"
+          className={styles.heroBg}
+        />
+      </motion.section>
 
       {/* About Section */}
 <motion.section
@@ -207,48 +213,68 @@ export default function HomePage() {
     ))}
   </div>
 </motion.section>
-
- {/* Branches Section */}
-        <motion.section
+<motion.section
   id="branches"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
   transition={{ duration: 0.6 }}
   variants={fadeIn}
-  className="max-w-3xl mx-auto"
+  className={stylesBranches.branchesSection}
 >
-  <h2 className="text-2xl font-semibold mb-4">Overseas Branches</h2>
+  <h2 className={stylesBranches.sectionTitle}>Overseas Branches</h2>
 
   {/* Japan */}
-  <div className="mb-12">
-    <h3 className="text-xl font-bold text-green-700">Chiyoda Kohan Japan Co., Ltd.</h3>
-    <p>KPP Yaesu Bldg. 9th FL, 1-10-7 Kyobashi, Chuo-ku, Tokyo 104-8115 Japan</p>
-    <p>Main Line: +81(0)3-3564-5511 | Fax: +81(0)3-3564-5527</p>
-    <p>Int. Dept: +81(0)3-3564-5519 / +81(0)3-3564-5530</p>
-    <p>Email: <a href="mailto:info_kokusai@chiyodakohan.co.jp" className="text-blue-600 underline">info_kokusai@chiyodakohan.co.jp</a></p>
-    <p><a href="https://www.chiyodakohan.co.jp" target="_blank" className="text-blue-600 underline">www.chiyodakohan.co.jp</a></p>
+  <div className={stylesBranches.branchBlock}>
+    <h3 className={stylesBranches.branchTitle}>Chiyoda Kohan Japan Co., Ltd.</h3>
+    <p className={stylesBranches.branchText}>
+      KPP Yaesu Bldg. 9th FL, 1-10-7 Kyobashi, Chuo-ku, Tokyo 104-8115 Japan
+    </p>
+    <p className={stylesBranches.branchText}>
+      Main Line: +81(0)3-3564-5511 | Fax: +81(0)3-3564-5527
+    </p>
+    <p className={stylesBranches.branchText}>
+      Int. Dept: +81(0)3-3564-5519 / +81(0)3-3564-5530
+    </p>
+    <p className={stylesBranches.branchText}>
+      Email: <a href="mailto:info_kokusai@chiyodakohan.co.jp" className={stylesBranches.branchLink}>info_kokusai@chiyodakohan.co.jp</a>
+    </p>
+    <p>
+      <a href="https://www.chiyodakohan.co.jp" target="_blank" className={stylesBranches.branchLink}>www.chiyodakohan.co.jp</a>
+    </p>
   </div>
 
   {/* Thailand */}
-  <div className="mb-12">
-    <h3 className="text-xl font-bold text-green-700">Chiyoda Kohan (Thailand) Co., Ltd.</h3>
-    <p>230 CS Tower, 14th Floor, Ratchadaphisek Road, Huay-Kwang, Bangkok 10310 Thailand</p>
-    <p>Tel: +662-274-0871 | Fax: +662-274-0875</p>
-    <p>Email: <a href="mailto:info2@chiyodakohan.co.th" className="text-blue-600 underline">info2@chiyodakohan.co.th</a></p>
-    <p><a href="https://www.chiyodakohan.co.th" target="_blank" className="text-blue-600 underline">www.chiyodakohan.co.th</a></p>
+  <div className={stylesBranches.branchBlock}>
+    <h3 className={stylesBranches.branchTitle}>Chiyoda Kohan (Thailand) Co., Ltd.</h3>
+    <p className={stylesBranches.branchText}>
+      230 CS Tower, 14th Floor, Ratchadaphisek Road, Huay-Kwang, Bangkok 10310 Thailand
+    </p>
+    <p className={stylesBranches.branchText}>
+      Tel: +662-274-0871 | Fax: +662-274-0875
+    </p>
+    <p className={stylesBranches.branchText}>
+      Email: <a href="mailto:info2@chiyodakohan.co.th" className={stylesBranches.branchLink}>info2@chiyodakohan.co.th</a>
+    </p>
+    <p>
+      <a href="https://www.chiyodakohan.co.th" target="_blank" className={stylesBranches.branchLink}>www.chiyodakohan.co.th</a>
+    </p>
   </div>
 
   {/* Wuxi, China */}
-  <div>
-    <h3 className="text-xl font-bold text-green-700">Chiyoda Kohan (Wuxi) Environmental Engineering Co., Ltd.</h3>
-    <p>千代田工販(無錫)環保科技有限公司</p>
-    <p>江蘇省無錫市新呉区長江北路106号 1509・1510室</p>
-    <p>(510 Jinyuan Guoji Building, 2-3 Xiangjiang Road, Wuxi, Jiangsu, China)</p>
-    <p>Tel: +86-510-8273-7451 | Fax: +86-510-8273-7455</p>
-    <p><a href="https://www.chiyodakohan.cn" target="_blank" className="text-blue-600 underline">www.chiyodakohan.cn</a></p>
+  <div className={stylesBranches.branchBlock}>
+    <h3 className={stylesBranches.branchTitle}>Chiyoda Kohan (Wuxi) Environmental Engineering Co., Ltd.</h3>
+    <p className={stylesBranches.branchText}>千代田工販(無錫)環保科技有限公司</p>
+    <p className={stylesBranches.branchText}>江蘇省無錫市新呉区長江北路106号 1509・1510室</p>
+    <p className={stylesBranches.branchText}>(510 Jinyuan Guoji Building, 2-3 Xiangjiang Road, Wuxi, Jiangsu, China)</p>
+    <p className={stylesBranches.branchText}>
+      Tel: +86-510-8273-7451 | Fax: +86-510-8273-7455
+    </p>
+    <p>
+      <a href="https://www.chiyodakohan.cn" target="_blank" className={stylesBranches.branchLink}>www.chiyodakohan.cn</a>
+    </p>
   </div>
-        </motion.section>
+</motion.section>
 
         {/* Contact Section */}
         <motion.section
@@ -264,7 +290,7 @@ export default function HomePage() {
           <form
             action="https://formspree.io/f/yourFormID" // Replace with your Formspree ID
             method="POST"
-            className="space-y-6"
+             className={`space-y-6 ${contactStyles.glassCard}`}
           >
             {/* Name */}
             <div>
@@ -321,7 +347,7 @@ export default function HomePage() {
             <div>
               <button
                 type="submit"
-                className="px-6 py-2 bg-green-700 text-white font-semibold rounded-md hover:bg-green-800 transition"
+                className="px-6 py-2 bg-[#ef5151] text-white font-semibold rounded-md hover:bg-red-700 transition"
               >
                 Send Message
               </button>

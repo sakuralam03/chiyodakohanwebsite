@@ -1,0 +1,16 @@
+.glassCard {
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(12px); /* frosted glass effect */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* soft border */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* subtle depth */
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Optional: hover effect */
+.glassCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
