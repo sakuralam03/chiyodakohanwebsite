@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import styles from "./Hero.module.css";
 import stylesAbout from './About.module.css';
+import Link from "next/link";
+import Image from "next/image";
+import stylesProducts from "./products/Products.module.css";
 
 
 const fadeIn = {
@@ -155,206 +158,56 @@ export default function HomePage() {
 
 
 
-
-        {/* Products Section */}
-        <motion.section
-          id="products"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+<motion.section
+  id="products"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
   variants={fadeIn}
-  className="max-w-3xl mx-auto"
+  className={stylesProducts.productsSection}
 >
-  <h2 className="text-3xl font-semibold mb-5">Our Products</h2>
-      <img src="homepage.png" alt="pic of products" />
- 
+  <h2 className={stylesProducts.sectionTitle}>Our Products</h2>
 
-  {/*UV 1  */}
- <h2 className="text-2xl font-bold  mb-4">Ultra Violet System</h2>
-  <img src="uv.png" alt="pic of uv "></img>
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">UV Steralizer Steritron UEX</h3>
-        <img src="uv1.jpg" alt="pic of uv1 "></img>
-        <ul className="list-disc pl-6 space-y-1">
-                    <li>UV sterilizer: STERITRON series
-Energy-Saving & Space-Saving
-With the use of the new highly efficient UV lamp, electronic ballast, light and the simulation technology of the fluid, the power consumption can be reduced up to 55%
-It can also achieve a reduction of up to 27% in installation space.
-Improvement in Maintenance
-With the use of an independent control panel, maintenance as well as overhaul can be easily managed.
+  <div className={stylesProducts.grid}>
+    {[
+      {
+        title: "Ultra Violet System",
+        image: "/uv.png",
+        link: "/products/uv",
+      },
+      {
+        title: "Membrane",
+        image: "/kubota.jpeg",
+        link: "/products/membrane",
+      },
+      {
+        title: "Seishin Products",
+        image: "/1_Seishin_Air_Knocker_SK.png",
+        link: "/products/seishin",
+      },
+      {
+        title: "LED Applications",
+        image: "/chiyoda_LED_app_2.png",
+        link: "/products/led",
+      },
+    ].map((section) => (
+      <Link href={section.link} key={section.title} className={stylesProducts.card}>
+        <div className={stylesProducts.overlay}>
+          <h3 className={stylesProducts.cardTitle}>{section.title}</h3>
+        </div>
+        <Image
+          src={section.image}
+          alt={section.title}
+          fill
+          className={stylesProducts.cardImage}
+          priority
+        />
+      </Link>
+    ))}
+  </div>
+</motion.section>
 
-Loaded with the Function of estimating the life span of UV lamps
-The timing for replacement of UV lamps can be known and set beforehand which is extremely useful for the purpose of planning and scheduling.
-
-Ideal for
-– Food & Beverage industries
-– Semiconductor industries
-– Waste water treatment system</li>
-        <li>Food & Beverage Lines</li>
-        <li>Semi-Conductor Process Lines</li>
-        <li>High-Tech Agriculture (Poultry, Ornamental Fish Farming)</li>
-
-     
-        </ul>
-    </div>
-
-    {/* UV 2 */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">Flonlizer</h3>
-        <ul className="list-disc pl-6 space-y-1">
-               <img src="uv2.png" alt="pic of uv2 "></img>
-        
-       
-        <li>Sea Water Application</li>
-        <li>Live Fish & Aquarium Use</li>
-
-        </ul>
-    </div>
-
-       {/* otheruv products */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">Tank Immerage Type</h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_tank_immerge type.png" alt="pic of uv3 "></img>
-        
-       
-
-        </ul>
-    </div>
-           {/* otheruv products */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">High Temperature Liquid Type</h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_liquid sugar.png" alt="pic of uv4 "></img>
-        <li>Liquid Sugar/Syrup etc </li>
-    
-        </ul>
-    </div>
-        {/* otheruv products */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">Tank Surface Type </h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_UV_tank surface type.png" alt="pic of uv5 "></img>
-
-    
-        </ul>
-    </div>
-        {/* otheruv products */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">Open Air Surface Cap Type   </h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_UV_open air surface cap type.png" alt="pic of uv6 "></img>
-
-    
-        </ul>
-    </div>
-      {/* otheruv products */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">TOC Type   </h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_UV_toc type.png" alt="pic of uv6 "></img>
-
-    
-        </ul>
-    </div>
-
-      {/* otheruv products */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">UV Application</h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_application example of UV.jpg" alt="pic of app "></img>
-        <img src="chiyoda_application example of UV_2.png" alt="pic of uv "></img>
-
-    
-        </ul>
-    </div>
-
- <h2 className="text-2xl font-bold  mb-4">Membrane </h2>
- <img src="kubota.jpeg" alt="pic of membrane "></img>
-
-    {/* Membrane Applications */}
-    <div className="mb-6">
-        <h3 className="text-xl font-bold ">Kubota Membrane Bio Reactor Membrane Application</h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_membrane_app_1.png" alt="pic of membrane  "></img>
-        <img src="chiyoda_membrane_app_2.png" alt="pic of membrane  "></img>
-        <li>Various Applications
-Since every wastewater has different characteristics, MBR plant design would be different.
-KUBOTA Corporation has a great number of applications and un-paralleled experience to meet your specific requirements.
-Features of the KUBOTA Submerged Membrane Unit
-1. Simple Structure
-2. Simple Chemical Cleaning
-3. Simple Maintenance
-4. Simple Replacement
-
-Merits for End user
-– Assured Compliance
-– Reduce land Area
-– Water Reuse / Recycling</li>
-
-   
-        </ul>
-    </div>
-      <div className="mb-6">
-        <h3 className="text-xl font-bold ">Example of Installation of Membrane </h3>
-        <ul className="list-disc pl-6 space-y-1">
-     <img src="chiyoda_membrane_app_1.png" alt="pic of membrane  "></img>
-        <img src="chiyoda_membrane_app_3.png" alt="pic of membrane  "></img>
-          <img src="chiyoda_membrane_app_4.png" alt="pic of membrane  "></img>
-           <img src="chiyoda_membrane_app_5.png" alt="pic of membrane  "></img>
-        </ul>
-    </div>
- 
-
-           <h3 className="text-2xl font-bold mb-4">Seishin Products</h3>
-           <img src="1_Seishin_Air_Knocker_SK.png" alt="pic of seishin  "></img>
-     {/* Seishin Product Highlights */}
-      <div className="mb-6">
-        <h3 className="text-xl font-bold ">Air Knocker</h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="Air-Knocker-1.png" alt="pic of air knocker  "></img>
-        <li>Air knocker is a unique equipment to remove powders clogged to an object such as hopper, tank and chute for storage, carriage, drying, pulverizing and dust collection.
-Air knocker operates only by compressed air and therefore is highly safe. When compressed air is supplied to an air knocker, an inside piston strikes its base plate. The impact power is transmitted to a hopper through the base plate, and clogging or bridge of powders in the hopper is resolved. Then the powder materials are removed and product flow is maintained without blockage or interruption.
-
-Our air knocker’s main body is made of aluminum alloy casting and has a simple
-structure. Therefore, it is lighter than other similar products made of steel. Set up
-and replacement of spare parts are very easy, too.</li>
-        <img src="chiyoda_seishin_air_knocker.png" alt="pic of air knocker  "></img>
-    
-        </ul>
-    </div>
-     {/*Jet BLASTERRR   */}
-      <div className="mb-6">
-        <h3 className="text-xl font-bold ">Jet Blaster  </h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="Jet-Blaster-1.jpg" alt="pic of jet blaster  "></img>
-        <li>”Jet Blaster” is a device that blows powerful air directly onto adhering powder to remove it and prevent clogging and adhesion.</li>
-    
-        </ul>
-    </div>
-        {/*cer hose   */}
-      <div className="mb-6">
-        <h3 className="text-xl font-bold ">Ceramic Hose   </h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_seishin_ceramic_hose.png" alt="pic of ceramic hose  "></img>
-       <img src="chiyoda_seishin_group.jpg" alt="pic of ceramic hose  "></img>
-    
-        </ul>
-    </div>
-
-           <h3 className="text-2xl font-bold mb-4">LED product application </h3>
-           <img src="chiyoda_LED_app_2.png" alt="pic of seishin  "></img>
-
-                 <div className="mb-6">
-        <h3 className="text-xl font-bold ">High Power LED moveable lamp</h3>
-        <ul className="list-disc pl-6 space-y-1">
-        <img src="chiyoda_LED_app_1.png" alt="pic of LED lamp  "></img>
-       <img src="chiyoda_LED_app_2.png" alt="pic of LED lamp  "></img>
-
-        </ul>
-    </div>
-        </motion.section>
  {/* Branches Section */}
         <motion.section
   id="branches"
