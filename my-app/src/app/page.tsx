@@ -3,7 +3,7 @@ import { useState,useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+
 import styles from "./Hero.module.css";
 import stylesAbout from './About.module.css';
 import Link from "next/link";
@@ -52,7 +52,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar />
+
 
       {/* Animated Waves */}
       <div className="wave"></div>
