@@ -1,0 +1,118 @@
+.membraneSection {
+  position: relative;
+  width: 100%;
+  padding: 6rem 1.5rem 3rem;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bannerTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.bannerBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 700px;
+  transition: all 0.3s ease;
+}
+
+.glassCard:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.productTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ef5151;
+  margin-bottom: 1rem;
+}
+
+.productImage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-bottom: 1rem;
+}
+
+.productList {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.linearGallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.galleryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carouselLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.carouselImage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .glassCard {
+    padding: 1.5rem;
+  }
+
+  .carouselImage {
+    max-width: 100%;
+  }
+}

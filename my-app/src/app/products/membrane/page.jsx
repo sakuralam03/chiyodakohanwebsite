@@ -1,10 +1,34 @@
 "use client";
 import { motion } from "framer-motion";
+import styles from "./MembraneProducts.module.css";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
 };
+
+const installationImages = [
+  {
+    src: "chiyoda_membrane_app_1.png",
+    alt: "Installation 1",
+    label: "Compact MBR Setup",
+  },
+  {
+    src: "chiyoda_membrane_app_3.png",
+    alt: "Installation 2",
+    label: "Industrial Wastewater Integration",
+  },
+  {
+    src: "chiyoda_membrane_app_4.png",
+    alt: "Installation 3",
+    label: "Underground Tank Configuration",
+  },
+  {
+    src: "chiyoda_membrane_app_5.png",
+    alt: "Installation 4",
+    label: "Surface-Level Deployment",
+  },
+];
 
 export default function MembraneProducts() {
   return (
@@ -15,27 +39,40 @@ export default function MembraneProducts() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       variants={fadeIn}
-      className="max-w-3xl mx-auto px-4 py-12"
+      className={styles.membraneSection}
     >
-      <h2 className="text-3xl font-bold mb-6 text-center">Membrane</h2>
-      <img src="/kubota.jpeg" alt="Membrane" className="mb-6" />
+      <h2 className={styles.bannerTitle}>Membrane</h2>
+      <img src="/kubota.jpeg" alt="Membrane" className={styles.bannerBg} />
 
-      <div className="mb-6">
-        <h3 className="text-xl font-bold mb-2">Kubota Membrane Bio Reactor</h3>
-        <img src="/chiyoda_membrane_app_1.png" alt="Membrane App 1" className="mb-2" />
-        <img src="/chiyoda_membrane_app_2.png" alt="Membrane App 2" className="mb-2" />
-        <ul className="list-disc pl-6 space-y-2">
+      {/* Kubota MBR */}
+      <div className={styles.glassCard}>
+        <h3 className={styles.productTitle}>Kubota Membrane Bio Reactor</h3>
+        <div className={styles.imageGrid}>
+          <img src="/chiyoda_membrane_app_1.png" alt="Membrane App 1" className={styles.productImage} />
+          <img src="/chiyoda_membrane_app_2.png" alt="Membrane App 2" className={styles.productImage} />
+        </div>
+        <ul className={styles.productList}>
           <li>Custom MBR designs for varied wastewater types</li>
           <li>Simple structure, cleaning, maintenance, and replacement</li>
           <li>Benefits: compliance, land savings, water reuse</li>
         </ul>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-xl font-bold mb-2">Example of Installation</h3>
-        {["chiyoda_membrane_app_1.png", "chiyoda_membrane_app_3.png", "chiyoda_membrane_app_4.png", "chiyoda_membrane_app_5.png"].map((src, i) => (
-          <img key={i} src={`/${src}`} alt={`Membrane ${i}`} className="mb-2" />
-        ))}
+      {/* Installation Showcase */}
+      <div className={styles.glassCard}>
+        <h3 className={styles.productTitle}>Example of Installation</h3>
+        <div className={styles.linearGallery}>
+          {installationImages.map((image) => (
+            <div key={image.src} className={styles.galleryItem}>
+              <h4 className={styles.carouselLabel}>{image.label}</h4>
+              <img
+                src={`/${image.src}`}
+                alt={image.alt}
+                className={styles.carouselImage}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </motion.section>
   );

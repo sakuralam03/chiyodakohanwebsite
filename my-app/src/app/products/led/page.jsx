@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import styles from "./LEDProducts.module.css";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -15,16 +16,16 @@ export default function LEDProducts() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       variants={fadeIn}
-      className="max-w-3xl mx-auto px-4 py-12"
+      className={styles.ledSection}
     >
-      <h2 className="text-3xl font-bold mb-6 text-center">LED Product Application</h2>
-      <img src="/chiyoda_LED_app_2.png" alt="LED Overview" className="mb-6 mx-auto" />
+      <h2 className={styles.sectionTitle}>LED Product Application</h2>
+   
 
-      <div className="mb-6">
-        <h3 className="text-xl font-bold mb-2 text-center">High Power LED Moveable Lamp</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <img src="/chiyoda_LED_app_1.png" alt="LED Lamp 1" className="mb-2" />
-          <img src="/chiyoda_LED_app_2.png" alt="LED Lamp 2" className="mb-2" />
+      <div className={styles.productCard}>
+        <h3 className={styles.productTitle}>High Power LED Moveable Lamp</h3>
+        <img src="/chiyoda_LED_app_1.png" alt="LED Lamp 1" className={styles.productImage} />
+        <img src="/chiyoda_LED_app_2.png" alt="LED Lamp 2" className={styles.productImage} />
+        <ul className={styles.productList}>
           <li>Portable high-power LED lamp for industrial and field use</li>
           <li>Energy-efficient and durable design</li>
           <li>Ideal for inspection, maintenance, and emergency lighting</li>
