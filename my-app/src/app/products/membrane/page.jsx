@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import styles from "./MembraneProducts.module.css";
+import Head from "next/head";
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
