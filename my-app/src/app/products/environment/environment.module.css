@@ -1,4 +1,4 @@
-.ledSection {
+.environmentSection {
   position: relative;
   width: 100%;
   padding: 6rem 1.5rem 3rem;
@@ -46,7 +46,7 @@
 }
 
 .productTitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #ef5151;
   margin-bottom: 1rem;
@@ -54,12 +54,13 @@
 
 .productImage {
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   height: auto;
   object-fit: contain;
   border-radius: 0.5rem;
   margin: 0 auto 1rem;
   display: block;
+    object-fit: contain; /* Optional: ensures image fits nicely */
 }
 
 .productList {

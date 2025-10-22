@@ -100,7 +100,7 @@ export default function HomePage() {
       Chiyoda Kohan (Singapore) was incorporated on 10 August 2001 with the objective of developing and expanding to the ASEAN markets. As a continuation of our parent company’s vision, we hope to contribute to society based on our accumulated experience in developing new technologies and systems.
     </p>
     <p>
-      Chiyoda Kohan is a leading manufacturer of ultraviolet disinfection systems in Japan specializing in environmental problems such as water purification and waste management. To provide excellent service, we have formed strategic alliances with more than 200 manufacturers and suppliers to offer complete solutions to our valued clients.
+      Chiyoda Kohan is a leading manufacturer of ultraviolet disinfection systems in Japan specializing in environmental problems such as water purification and waste management. To provide excellent service, we have formed strategic alliances with more than 500 manufacturers and suppliers to offer complete solutions to our valued clients.
     </p>
     <p>
       Underlying our commitment to service and development is the constant drive of our dynamic pioneer team of sales personnel and support staff. With dedication and enthusiasm, we are confident in gaining access to tomorrow’s technologies and markets.
@@ -193,9 +193,9 @@ export default function HomePage() {
         link: "/products/seishin",
       },
       {
-        title: "LED Applications",
-        image: "/chiyoda_LED_app_2.png",
-        link: "/products/led",
+        title: "Environment",
+        image: "/env.png",
+        link: "/products/environment",
       },
     ].map((section) => (
       <Link href={section.link} key={section.title} className={stylesProducts.card}>

@@ -19,7 +19,7 @@ const products = [
   },
   {
     title: "Jet Blaster",
-    img: ["/Jet-Blaster-1.jpg"],
+    img: ["/jetblaster.png"],
     items: ["Blows powerful air to remove adhering powder and prevent clogging"],
   },
   {
@@ -27,10 +27,62 @@ const products = [
     img: ["/chiyoda_seishin_ceramic_hose.png", "/chiyoda_seishin_group.jpg"],
     items: [],
   },
+    {
+    title: "Octagon200",
+    img: ["/Octagon200.png", ],
+    items: [],
+  },
+      {
+    title: "RO Tap Shaker",
+    img: ["/RO Tap Shaker.png", ],
+    items: [],
+  },
+       {
+    title: "GA 6",
+    img: ["/GA 6.png", ],
+    items: [],
+  },
+         {
+    title: "Robot Sifter RPS 02",
+    img: ["/Robot Sifter RPS 02.png", ],
+    items: [],
+  },
+           {
+    title: "Robot Sifter RPS 01",
+    img: ["/Robot Sifter RPS 01.png", ],
+    items: [],
+  },
+             {
+    title: "Auto Sieve Shaker",
+    img: ["/Auto sieve shaker.png", ],
+    items: [],
+  },
+
 ];
 
 export default function SeishinProducts() {
   return (
+     <>
+      <Head>
+        <title>Seishin Products | Chiyoda Kohan</title>
+        <meta
+          name="description"
+          content="Explore Chiyoda Kohan's Seishin products including Air Knocker, Jet Blaster, and Ceramic Hose for industrial and commercial use."
+        />
+        <meta
+          name="keywords"
+          content="Seishin, Air Knocker, Jet Blaster, Ceramic Hose, industrial, commercial, Chiyoda Kohan Singapore"
+        />
+        <meta name="author" content="Chiyoda Kohan" />
+        <meta property="og:title" content="Seishin Products | Chiyoda Kohan" />
+        <meta
+          property="og:description"
+          content="Innovative Seishin solutions for industrial applications."
+        />
+        <meta property="og:image" content="/Air-Knocker-1.png" />
+        <meta property="og:url" content="https://chiyodakohan.sg/seishin-products" />
+      </Head>
+    
     <motion.section
       id="seishin-products"
       initial="hidden"
@@ -55,7 +107,9 @@ export default function SeishinProducts() {
             </ul>
           )}
         </div>
+
       ))}
     </motion.section>
+    </>
   );
 }
