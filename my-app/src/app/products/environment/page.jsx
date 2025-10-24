@@ -49,7 +49,7 @@ export default function EnvironmentProducts() {
 
         <div className={styles.productCard}>
           <h3 className={styles.productTitle}>eVIO100 (Surface and Air Sterilizer)</h3>
-          <img src="/evio100.png" alt="eVIO100" className={styles.productImage} />
+          <img src="/eVIO100.png" alt="eVIO100" className={styles.productImage} />
         </div>
 
         <div className={styles.productCard}>
